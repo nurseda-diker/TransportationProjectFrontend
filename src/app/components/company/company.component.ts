@@ -1,7 +1,8 @@
 import { CompanyService } from './../../services/company.service';
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import {HttpClient} from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-company',
@@ -11,6 +12,7 @@ import {HttpClient} from "@angular/common/http";
 export class CompanyComponent implements OnInit {
 
   companies:Company[]=[]
+  currentCompany:Company;
   dataLoaded=false;
   constructor(private companyService:CompanyService){}
   ngOnInit(): void {
@@ -23,6 +25,22 @@ export class CompanyComponent implements OnInit {
       this.dataLoaded=true;
     })
   }
+
+  setCurrentCompany(company:Company){
+    this.currentCompany=company;
+  }
+
+  getCurrentCompany(company:Company){
+    if(company==this.currentCompany){
+      return "list-group-item active";
+    }
+    else{
+      return "list-group-item"
+    }
+    
+  }
+
+  
 
 
 }

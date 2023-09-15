@@ -1,13 +1,9 @@
 <div *ngFor="let companyDetail of companyDetails" class="card">
     <h5 class="card-header">{{companyDetail.companyName}}</h5>
     <div class="card-body">
-      <h5 class="card-title">Talep Türleri: {{companyDetail.requestType}}</h5>
+      <h5 class="card-title">Taşıma Türleri: {{companyDetail.requestType}}</h5>
       <p class="card-text">Araç Türleri: {{companyDetail.vehicleType}}</p>
-      <div class="star-rating">
-        <span *ngFor="let star of getStarRating(companyDetail.rating)">
-          <i class="bi bi-star-fill"></i>
-        </span>
-      </div>
+      <p class="card-text">Puanı : {{companyDetail.rating}}</p>
       
       
       <a href="#" class="btn btn-primary">Nakliyat Talebi</a> 

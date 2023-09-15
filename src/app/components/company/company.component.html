@@ -1,3 +1,5 @@
 <ul *ngIf="dataLoaded==true" class="list-group">
-    <li *ngFor="let company of companies" class="list-group-item">{{company.companyName}}</li> 
+    <li (click)="setCurrentCompany(company)" *ngFor="let company of companies" routerLink="/companies/{{company.companyId}}" [class]=" getCurrentCompany(company)">{{company.companyName}}</li> 
 </ul>
+
+ <h5 *ngIf="currentCompany"> {{currentCompany.companyName}} sectiniz</h5> 

@@ -24,6 +24,16 @@ export class CompanyService {
     return this.httpClient.get<ListResponseModel<CompanyDetail>>(newPath);
   }
 
+  getCompaniesById(companyId:number):Observable<ListResponseModel<CompanyDetail>>{
+    let newPath=this.apiUrl + "companies/getbycompanyid?companyId=" + companyId;
+    return this.httpClient.get<ListResponseModel<CompanyDetail>>(newPath);
+  }
+
+  getCompaniesByRequestId(requestId:number):Observable<ListResponseModel<CompanyDetail>>{
+    let newPath=this.apiUrl + "companies/getcompanydetailsbyrequestid?requestId="+ requestId;
+    return this.httpClient.get<ListResponseModel<CompanyDetail>>(newPath);
+  }
+
 
 
 }

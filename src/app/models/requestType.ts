@@ -1,5 +1,5 @@
 export interface RequestType{
-    id:number;
+    requestTypeId:number;
     requestTypeName:string;
     requestTypePrice:number;
 }

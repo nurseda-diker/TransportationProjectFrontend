@@ -9,6 +9,7 @@ import { RequestType } from 'src/app/models/requestType';
 })
 export class RequestTypeComponent implements OnInit {
 
+  currentRequestType:RequestType;
   requestTypes:RequestType[]=[]
   dataLoaded=false;
   constructor(private requestTypeService:RequestTypeService){}
@@ -21,6 +22,19 @@ export class RequestTypeComponent implements OnInit {
       this.requestTypes=response.data;
       this.dataLoaded=true;
     })
+  }
+
+  setCurrentRequestType(requestType:RequestType){
+    this.currentRequestType=requestType;
+  }
+
+  getCurrentRequestType(requestType:RequestType){
+    if(requestType==this.currentRequestType){
+      return "list-group-item active";
+    }
+    else{
+      return "list-group-item";
+    }
   }
 
 }
