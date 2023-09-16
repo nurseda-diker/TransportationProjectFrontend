@@ -4,13 +4,14 @@ import { CompanyDetailComponent } from './components/company-detail/company-deta
 import { TransportRequestAddComponent } from './components/transport-request-add/transport-request-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CompanyDetailComponent},
   {path:"companies",component:CompanyDetailComponent},
   {path:"companies/:companyId",component:CompanyDetailComponent},
   {path:"companies/requestTypes/:requestTypeId",component:CompanyDetailComponent},
-  {path:"transportRequests/add",component:TransportRequestAddComponent},
+  {path:"transportRequests/add",component:TransportRequestAddComponent,canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent}
 ];
