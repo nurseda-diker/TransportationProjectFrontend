@@ -19,14 +19,24 @@ export class TransportRequestAddComponent implements OnInit {
   constructor(private transportRequestService:TransportRequestService,private formBuilder:FormBuilder,private toastrService:ToastrService,private requestTypeService:RequestTypeService){}
 
   ngOnInit(): void {
-    this.getRequestTypes();
+   
     this.createtransportRequestAddForm();
+    this.getRequestTypes();
   }
 
   createtransportRequestAddForm(){
     this.transportRequestAddForm=this.formBuilder.group({
-      name:["",Validators.required]
-    });
+      requestTypeId:["",Validators.required],
+      sourceAddress:["",Validators.required],
+      destinationAddress:["",Validators.required],
+      userId:["",Validators.required],
+      
+
+      
+    })
+    
+   
+    
   }
 
   add(){
@@ -34,6 +44,7 @@ export class TransportRequestAddComponent implements OnInit {
       let requestModel=Object.assign({},this.transportRequestAddForm.value);
       this.transportRequestService.add(requestModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı");
+        console.log(this.transportRequestAddForm)
       },responseError=>{
         if(responseError.error.Errors.length>0){
           for(let i=0;i<responseError.error.Errors[i].length;i++){
@@ -41,9 +52,11 @@ export class TransportRequestAddComponent implements OnInit {
           }
         }
       })
+      console.log(this.transportRequestAddForm)
     }
     else{
       this.toastrService.error("Formunuz eksik","Dikkat!");
+      console.log(this.transportRequestAddForm)
     }
   }
 

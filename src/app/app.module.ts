@@ -15,6 +15,8 @@ import { TransportRequestComponent } from './components/transport-request/transp
 import { TransportRequestAddComponent } from './components/transport-request-add/transport-request-add.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { TransportationTeamComponent } from './components/transportation-team/transportation-team.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TransportationTeamComponent } from './components/transportation-team/tr
     TransportRequestComponent,
     TransportRequestAddComponent,
     ReservationComponent,
-    TransportationTeamComponent
+    TransportationTeamComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
