@@ -1,1 +1,17 @@
+<div class="row">
+    <div class="column" *ngFor="let team of transportationTeams">
+      <div class="card">
+        <div class="container">
+          <h2>{{team.teamName}}</h2>
+          <p class="title">{{team.memberName}}</p>
+          <p>{{team.contactEmail}}</p>
+          <p>{{team.contactPhone}}</p>
+          <p><button class="button" routerLink="/message">Mesaj At</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+
 

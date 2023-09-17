@@ -1,0 +1,20 @@
+<table *ngIf="dataLoaded == true" class="table">
+    <thead>
+      <tr>
+        <th>Araç Markası</th>
+        <th>Araç Türü</th>
+        <th>Araç Kapasitesi</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicle of vehicles">      
+          <td>{{ vehicle.vehicleBrand}}</td>
+          <td>{{ vehicle.vehicleType }}</td>
+          <td>{{ vehicle.vehicleCapacity }} ton</td>
+          <td><button class="btn btn-success" routerLink="/drivers/{{vehicle.vehicleId}}">Şöfor Bilgisi</button></td>
+        </tr>
+    </tbody>
+    
+  </table>

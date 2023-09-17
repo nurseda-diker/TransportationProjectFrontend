@@ -1,7 +1,9 @@
+import { VehicleService } from './../../services/vehicle.service';
 import { CompanyDetail } from 'src/app/models/companyDetail';
 import { CompanyService } from './../../services/company.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Vehicle } from 'src/app/models/vehicle';
 
 @Component({
   selector: 'app-company-detail',
@@ -10,18 +12,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CompanyDetailComponent implements OnInit {
   companyDetails: CompanyDetail[] = [];
+  vehicles:Vehicle[]=[]
   dataLoaded = false;
-  constructor(private companyService: CompanyService,private activatedRoute:ActivatedRoute) {}
+  constructor(private companyService: CompanyService,private activatedRoute:ActivatedRoute,private vehicleService:VehicleService) {}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
       if(params["companyId"]){
         this.getCompaniesById(params["companyId"]);
+        
       }
       else if(params["id"]){
         this.getCompaniesByRequestId(params["id"]);   
       }
       else{
         this.getCompanyDetails();
+        this.getVehicles();
       }
     })
     
@@ -47,6 +52,12 @@ export class CompanyDetailComponent implements OnInit {
     this.companyService.getCompaniesByRequestId(id).subscribe((response)=>{
       this.companyDetails=response.data;
       this.dataLoaded=true;
+    })
+  }
+
+  getVehicles(){
+    this.vehicleService.getVehicles().subscribe(response=>{
+      this.vehicles=response.data;
     })
   }
 

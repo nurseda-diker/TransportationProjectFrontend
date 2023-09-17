@@ -18,6 +18,9 @@ import { TransportationTeamComponent } from './components/transportation-team/tr
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { VehicleComponent } from './components/vehicle/vehicle.component';
+import { DriverComponent } from './components/driver/driver.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ReservationComponent,
     TransportationTeamComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    VehicleComponent,
+    DriverComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

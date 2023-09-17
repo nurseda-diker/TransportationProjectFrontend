@@ -6,6 +6,16 @@
       <p class="card-text">Puanı : {{companyDetail.rating}}</p>
       
       
-      <a href="#" class="btn btn-primary">Nakliyat Talebi</a> 
+      <a routerLink="transportRequests/add" class="btn btn-primary">Nakliyat Talebi</a> 
+    
+      <a style="color: grey; font-style: italic;float: right;" routerLink="/vehicles/{{companyDetail.companyId}}"> Araç bilgileri için tıklayınız </a>
+      <button class="btn btn-success m-lg-2" routerLink="/team/{{companyDetail.companyId}}">Taşıma Ekibi Bilgisi</button>
+      
+    
+
+    
     </div>
   </div>
+
+
+

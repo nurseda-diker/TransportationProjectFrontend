@@ -1,0 +1,23 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Mesaj Gönder</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="messageForm">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label for="messageContent">Mesaj İçeriği</label>
+                            <input type="text" id="messageContent" formControlName="messageContent" class="form-control" placeholder="Mesaj İçeriği">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-footer">
+                <button class="btn btn-primary" (click)="add()">Gönder</button>
+            </div>
+        </div>
+    </div>
+</div>

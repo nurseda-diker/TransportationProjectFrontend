@@ -1,0 +1,16 @@
+<table *ngIf="dataLoaded == true" class="table">
+    <thead>
+      <tr>
+        <th>Şöfor Adı</th>
+        <th>Şöfor Telefon Numarası</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of drivers">      
+          <td>{{ driver.driverName}}</td>
+          <td>{{ driver.phoneNumber }}</td>
+        </tr>
+    </tbody>
+    
+  </table>
+

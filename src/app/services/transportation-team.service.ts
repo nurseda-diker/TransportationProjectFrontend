@@ -18,6 +18,11 @@ export class TransportationTeamService {
     return this.httpClient.get<ListResponseModel<TransportationTeam>>(newPath);
   }
 
+  getTeamsByCompanyId(companyId:number):Observable<ListResponseModel<TransportationTeam>>{
+    let newPath=this.apiUrl + "transportationTeams/getteambycompanyid?companyId=" + companyId;
+    return this.httpClient.get<ListResponseModel<TransportationTeam>>(newPath);
+  }
+
 
 
   
